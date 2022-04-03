@@ -25,8 +25,28 @@ app.get('/math/rectangle/:width/:height', function(req, res) {
   res.json({'area': area, 'perimeter': perimeter});
 });
 
-// define endpoint for exercise 3 here
 
+//Exercise 3: Hello, you!
+// define endpoint for exercise 3 here
+//https://node4.tomkrok1.repl.co/hello/name?first=Tom&last=Krok
+app.get('/hello/name', function(req, res) {
+  res.type('text');
+  if (req.query['first'] && req.query['last']) {
+    res.send('Hello ' + req.query['first'] + ' ' + req.query['last']);
+  } else {
+    let errorMsg = 'Error: missing ';
+    if (!req.query['first']) {
+      errorMsg += 'first';
+      if (!req.query['last']) {
+        errorMsg += ', ';
+      }
+    }
+    if (!req.query['last']) {
+      errorMsg += 'last';
+    }
+    res.status(400).send(errorMsg);
+  }
+});
 
 // define endpoint for exercise 4 here
 
