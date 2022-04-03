@@ -1,0 +1,23 @@
+{
+  "name": "node4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trak2022z/node4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trak2022z/node4/issues"
+  },
+  "homepage": "https://github.com/trak2022z/node4#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
