@@ -48,7 +48,21 @@ app.get('/hello/name', function(req, res) {
   }
 });
 
+//Exercise 4: Exquisite Exponents
 // define endpoint for exercise 4 here
+///math/power/:base/:exponent
+//https://node4.tomkrok1.repl.co/math/power/2/3?root=true
+app.get('/math/power/:base/:exponent', function(req, res) {
+  let base = parseFloat(req.params['base']);
+  let exponent = parseFloat(req.params['exponent']);
+  let power = Math.pow(base, exponent);
+  if (req.query['root']) {
+    let root = Math.sqrt(base);
+    res.json({'result': power, 'root': root});
+  } else {
+    res.json({'result': power});
+  }
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
